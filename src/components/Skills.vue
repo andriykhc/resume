@@ -30,9 +30,8 @@
         {
             title: "Frontend",
             children: [
-                { title: "JavaScript/Nuxt.js/Vite.js/Vue.js/jQuery" },
+                { title: "JavaScript/Vue/Nuxt.js/React/Next.js" },
                 { title: "Tailwindcss/Bootstrap" },
-                { title: "Flutter" },
                 { title: "HTML/CSS/SASS/LESS" },
                 { title: "Blade/Twig/EJS/Freemarker" },
             ]
@@ -40,14 +39,12 @@
         {
             title: "Backend",
             children: [
-                { title: "PHP (Native, Laravel, CodeIgniter, Symfony, Slim Framework)" },
+                { title: "PHP (Laravel, CodeIgniter, Symfony, Slim Framework)" },
                 { title: "Node.js (Express, Adonis.js, Socket.io)" },
-                { title: "Go" },
-                { title: "Java" },
             ]
         },
         {
-            title: "Databaase",
+            title: "Database",
             children: [
                 { title: "MySQL/MariaDB" },
                 { title: "MongoDB" },
@@ -58,9 +55,9 @@
         {
             title: "Other",
             children: [
-                { title: "Continuous Integration" },
-                { title: "Git/Github/Azure Repos" },
-                { title: "Azure Pipelines/Github Actions" },
+                { title: "CI/CD" },
+                { title: "Git/Github/Azure Repos/GitLab" },
+                { title: "Azure Pipelines/Github Actions/GitLab CI" },
                 { title: "Code Review" },
                 { title: "Build Library" },
             ]
