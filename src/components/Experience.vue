@@ -41,8 +41,14 @@
 <script setup lang="ts">
     const experiences = [
         {
+            title: "Full Stack Developer",
+            since: "June 2023 - Present",
+            desc: "DevOps, Backend, Frontend",
+            company: "PT Widya Imersif Teknologi"
+        },
+        {
             title: "Lead Backend Developer",
-            since: "January 2021 - Present",
+            since: "January 2021 - May 2023",
             desc: "Create backend and frontend scaffolding, Create helper Libraries, Build and configure applications Ensure team adherence to project quality standards Assist with application troubleshooting and debugging Write testable and scalable program code Educate junior developers on best practices Create API Services Build Web Applications Technology research.",
             company: "PT Botika Teknologi Indonesia"
         },
