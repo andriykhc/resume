@@ -42,8 +42,14 @@
     const experiences = [
         {
             title: "Full Stack Developer",
-            since: "June 2023 - Present",
-            desc: "DevOps, Backend, Frontend",
+            since: "August 2023 - June 2026",
+            desc: "Building a Widya Loadscanner application that is integrated with IoT, OpenAPI features & custom clients",
+            company: "Widya Robotics (PT Widya Inovasi Indonesia)",
+        },
+        {
+            title: "Full Stack Developer",
+            since: "June 2023 - August 2026",
+            desc: "Build health applications with IoT integration and deploy to servers using",
             company: "PT Widya Imersif Teknologi"
         },
         {
