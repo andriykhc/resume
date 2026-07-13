@@ -20,6 +20,7 @@
 <script setup lang="ts">
     const languages = [
         "Indonesian",
-        "Javanese"
+        "Javanese",
+        "English (Written)",
     ];
 </script>
