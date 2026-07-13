@@ -22,6 +22,8 @@
         "Motorcycle",
         "To tourist spots",
         "Game",
-        "Music"
+        "Music",
+        "Fishing",
+        "Football",
     ];
 </script>
