@@ -114,14 +114,14 @@
 
                             <span>
                                 <a
-                                    href="https://github.com/andripgbyk"
+                                    href="https://github.com/andriykhc"
                                     target="_blank"
                                 >
-                                    github.com/andripgbyk
+                                    github.com/andriykhc
                                 </a>
                             </span>
                         </li>
-                        
+
                         <li class="flex items-center space-x-2">
                             <!-- Icon -->
                             <svg
