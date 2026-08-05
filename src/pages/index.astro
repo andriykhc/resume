@@ -1,0 +1,201 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+const profile = {
+  name: "Andrianto",
+  role: "Full-stack Engineer",
+  location: "Yogyakarta, Indonesia",
+  email: "andrianto.ykhc@gmail.com",
+  phone: "+6282136523735",
+  github: "https://github.com/andriykhc",
+  linkedin: "https://linkedin.com/in/andripgbyk",
+  summary: "Full-stack Engineer with extensive experience in designing and scaling enterprise web platforms, robust microservices, and high-performance applications. Quick learner with a strong passion for exploring new technologies and solving complex challenges."
+};
+
+const skillCategories = [
+  {
+    category: "Languages & Core",
+    skills: ["TypeScript", "JavaScript", "Go", "PHP", "Python (Basic)", "HTML/CSS", "Microservices", "REST APIs", "WebSocket", "MQTT", "Git"]
+  },
+  {
+    category: "Full-stack Frameworks",
+    skills: ["NestJS", "Hono.js", "Laravel", "Express", "Fiber", "React", "Next.js", "Vue.js", "Nuxt.js", "Astro", "Tailwind CSS", "Zustand"]
+  },
+  {
+    category: "Databases, DevOps & Cloud",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "MinIO", "SQLite", "Docker", "Linux", "AWS", "GCP", "Cloudflare", "Nginx", "CI/CD"]
+  }
+];
+
+const experiences = [
+  {
+    company: "Widya Robotics (PT Widya Inovasi Indonesia)",
+    roles: [
+      {
+        title: "Full-stack Engineer",
+        period: "August 2023 - June 2026",
+        highlights: [
+          "Built Widya Loadscanner with IoT hardware integration and custom OpenAPI features."
+        ]
+      }
+    ]
+  },
+  {
+    company: "PT Widya Imersif Teknologi",
+    roles: [
+      {
+        title: "Full-stack Engineer",
+        period: "June 2023 - August 2026",
+        highlights: [
+          "Built healthcare apps with IoT integration and managed server deployments."
+        ]
+      }
+    ]
+  },
+  {
+    company: "PT Botika Teknologi Indonesia",
+    roles: [
+      {
+        title: "Lead Backend Engineer",
+        period: "January 2021 - May 2023",
+        highlights: [
+          "Architected core scaffolding, libraries, and applications while enforcing quality standards, resolving bugs, writing scalable code, mentoring junior developers, and conducting technical research.",
+        ]
+      },
+      {
+        title: "Backend Engineer",
+        period: "May 2019 - December 2020",
+        highlights: [
+          "Developed full-stack web applications, RESTful APIs, and webhook systems, while handling third-party integrations to support core product workflows.",
+        ]
+      },
+      {
+        title: "Senior Chatbot Engineer",
+        period: "September 2018 - April 2019",
+        highlights: [
+          "Designed and built conversational chatbots using external APIs while assisting and mentoring engineering teams to meet project deliverables.",
+        ]
+      },
+      {
+        title: "Chatbot Engineer",
+        period: "March 2018 - September 2018",
+        highlights: [
+          "Built and deployed conversational chatbot solutions integrated with third-party APIs."
+        ]
+      }
+    ]
+  }
+];
+
+const education = {
+  degree: "SMK N 2 Depok, Sleman | Computer and Network Engineering",
+  period: "2014 - 2018"
+};
+
+const languages = [
+  { name: "Indonesian", proficiency: "Native" },
+  { name: "English", proficiency: "Basic" }
+];
+---
+
+<Layout title={`${profile.name} - ${profile.role} - Resume`}>
+  <div class="bg-white sm:p-10 rounded-2xl sm:border sm:border-slate-200/85 sm:shadow-xs print:shadow-none print:border-none print:p-0">
+
+    <!-- HEADER -->
+    <header class="border-b border-slate-200 pb-2 mb-5">
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mb-1">{profile.name}</h1>
+      <p class="text-sm font-semibold text-slate-700 mb-3">{profile.role}</p>
+
+      <div class="flex flex-wrap gap-y-1 gap-x-3 text-xs text-slate-600">
+        <span class="inline-flex items-center gap-1 font-medium text-slate-700">Location: {profile.location}</span>
+        <span>•</span>
+        <a href={`mailto:${profile.email}`} class="hover:underline font-medium text-slate-900">{profile.email}</a>
+        <span>•</span>
+        <a href={`https://wa.me/${profile.phone}`} class="hover:underline font-medium text-slate-900">{profile.phone}</a>
+        <!-- <span>•</span> -->
+        <!-- <a href={profile.github} target="_blank" rel="noopener noreferrer" class="hover:underline font-medium text-slate-900">
+          {profile.github.replace('https://', '')}
+        </a> -->
+        <span>•</span>
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" class="hover:underline font-medium text-slate-900">
+          {profile.linkedin.replace('https://', '')}
+        </a>
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section class="mb-5">
+      <h2 class="text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-2 border-b border-slate-100">Summary</h2>
+      <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+        {profile.summary}
+      </p>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section class="mb-5">
+      <h2 class="text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-2 border-b border-slate-100">Technical Skills</h2>
+      <div class="space-y-1.5 text-xs text-slate-700">
+        {skillCategories.map((group) => (
+          <div>
+            <strong class="text-slate-900 font-semibold">{group.category}:</strong> {group.skills.join(", ")}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="mb-5">
+      <h2 class="text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-3 border-b border-slate-100">Work Experience</h2>
+
+      <div class="space-y-3">
+        {experiences.map((exp) => (
+          <div>
+            <!-- Company Header -->
+            <h3 class="font-bold text-xs sm:text-sm text-slate-900 mb-2 border-b border-slate-100/80 pb-0.5">
+              {exp.company}
+            </h3>
+
+            <!-- Roles inside the Company -->
+            <div class="space-y-2 pl-2">
+              {exp.roles.map((role) => (
+                <div>
+                  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                    <span class="font-semibold text-xs sm:text-sm text-slate-800">{role.title}</span>
+                    <span class="text-xs font-medium text-slate-500">{role.period}</span>
+                  </div>
+                  <div class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  {role.highlights.map((item) => (
+                    <p>{item}</p>
+                  ))}
+                </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="mb-5">
+      <h2 class="text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-2 border-b border-slate-100">Education</h2>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm text-slate-700">
+        <span class="font-bold text-slate-900">{education.degree}</span>
+        <span class="text-xs font-semibold text-slate-500">{education.period}</span>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section>
+      <h2 class="text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-2 border-b border-slate-100">Languages</h2>
+      <div class="text-xs sm:text-sm text-slate-700">
+        {languages.map((lang, index) => (
+          <span>
+            <strong class="text-slate-900 font-semibold">{lang.name}</strong> ({lang.proficiency}){index < languages.length - 1 ? ", " : ""}
+          </span>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</Layout>
