@@ -1,0 +1,75 @@
+---
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Andrianto - Resume / CV",
+  description = "ATS-optimized professional resume of Andrianto, Full-stack Engineer."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <style>
+      @media print {
+        @page {
+          margin: 0.5in;
+          size: A4;
+        }
+        .no-print {
+          display: none !important;
+        }
+        body {
+          background-color: white !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col justify-between bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white print:bg-white">
+
+    <!-- Header / Navbar (Hidden when printing/saving to PDF) -->
+    <header class="no-print sticky top-0 z-50 bg-slate-50/80 backdrop-blur-md border-b border-slate-200">
+      <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/" class="font-mono font-bold text-sm tracking-tight text-slate-900 flex items-center gap-1">
+          @andripgbyk<span class="text-slate-400">_</span> <span class="font-normal text-slate-500 ml-1">/ resume</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-medium hover:bg-slate-800 transition shadow-xs cursor-pointer"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Save PDF
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="grow py-8 sm:py-12 print:py-0">
+      <div class="max-w-3xl mx-auto px-6 sm:px-0">
+        <slot />
+      </div>
+    </main>
+
+    <!-- Footer (Hidden when printing) -->
+    <footer class="no-print border-t border-slate-200 py-8 bg-white/50">
+      <div class="max-w-4xl mx-auto px-6 text-center text-sm text-slate-500">
+        <p>&copy; {new Date().getFullYear()} Andrianto. Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 underline underline-offset-4 transition">Astro</a> & <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 underline underline-offset-4 transition">Tailwind CSS</a>.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
